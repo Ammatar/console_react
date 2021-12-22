@@ -3,6 +3,8 @@ import { commands } from './commands';
 
 class MainStore {
   //initial state
+  isLogged = false;
+  username;
   commands;
   tabs = [
     {
@@ -31,6 +33,23 @@ class MainStore {
         case 'clear':
           this.commandClear(id);
           break;
+        case 'login':
+          if (commandSplit[1]) {
+            const user = commands.login(
+              this.isLogged,
+              id,
+              this.tabs,
+              this.username,
+              commandSplit[1]
+            );
+            this.isLogged = user.isLogged;
+            this.username = user.username ? user.username : null;
+          }
+          break;
+        case 'logoff':
+          this.isLogged = false;
+          this.username = null;
+          break;
         default:
           commands.notFound(id, this.tabs);
           break;
@@ -43,6 +62,9 @@ class MainStore {
         ? (el.content = ['Type "help" for commands list'])
         : el;
     });
+  }
+  toggleLogged() {
+    this.isLogged = !this.isLogged;
   }
 }
 
