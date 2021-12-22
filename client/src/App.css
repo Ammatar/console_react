@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: darkgreen;
+  color: greenyellow;
+}
+
+.App {
+  margin: 10px;
+}
+
+.tabs--container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tab--item {
+  margin: 0 10px;
+}
+
+.content {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid black;
+}
+
+.controls--container {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.controls--form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.controls--form input {
+  width: 80%;
+  background-color: darkgreen;
+  color: greenyellow;
+}
+
+.controls--form button {
+  width: 10%;
+}
+/*# sourceMappingURL=App.css.map */
