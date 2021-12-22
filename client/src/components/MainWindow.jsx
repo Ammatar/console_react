@@ -8,7 +8,6 @@ import { observer } from 'mobx-react-lite';
 const MainWindow = observer(() => {
   const [tabs, setTabs] = React.useState([...store.tabs]);
   const [activeTabId, setActiveTabId] = React.useState(0);
-  const [data, setData] = React.useState('Initial data');
 
   return (
     <>
@@ -18,13 +17,8 @@ const MainWindow = observer(() => {
         setTabs={setTabs}
         setActiveTabId={setActiveTabId}
       />
-      <Content
-        data={data}
-        store={store}
-        tabs={tabs}
-        activeTabId={activeTabId}
-      />
-      <Controls setData={setData} store={store} activeTabId={activeTabId} />
+      <Content store={store} tabs={tabs} activeTabId={activeTabId} />
+      <Controls store={store} activeTabId={activeTabId} />
     </>
   );
 });

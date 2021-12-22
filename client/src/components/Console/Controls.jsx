@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Controls = ({ store, activeTabId, commands, setData }) => {
+const Controls = ({ store, activeTabId }) => {
   const [inputString, setInputString] = React.useState('');
 
   return (
